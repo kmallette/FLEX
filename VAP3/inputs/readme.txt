@@ -1,0 +1,1 @@
+The VAP input files found here are based viewed by dragging the file into the COMMAND window within MATLAB. However, txt or importing the files works equally well.

@@ -1,0 +1,82 @@
+plop
+g
+
+load
+aux_files\tpb6c59d44_34d7_4458_aa9b_9a5010ff4e6c.foil
+oper
+iter
+100
+visc
+2500000
+vpar
+xtr
+1.00
+1.00
+
+pacc
+aux_files\tp1e83e44a_713b_4928_a5ae_61792a422a05.dat
+
+alfa -5.000
+alfa -4.750
+alfa -4.500
+alfa -4.250
+alfa -4.000
+alfa -3.750
+alfa -3.500
+alfa -3.250
+alfa -3.000
+alfa -2.750
+alfa -2.500
+alfa -2.250
+alfa -2.000
+alfa -1.750
+alfa -1.500
+alfa -1.250
+alfa -1.000
+alfa -0.750
+alfa -0.500
+alfa -0.250
+alfa 0.000
+alfa 0.250
+alfa 0.500
+alfa 0.750
+alfa 1.000
+alfa 1.250
+alfa 1.500
+alfa 1.750
+alfa 2.000
+alfa 2.250
+alfa 2.500
+alfa 2.750
+alfa 3.000
+alfa 3.250
+alfa 3.500
+alfa 3.750
+alfa 4.000
+alfa 4.250
+alfa 4.500
+alfa 4.750
+alfa 5.000
+alfa 5.250
+alfa 5.500
+alfa 5.750
+alfa 6.000
+alfa 6.250
+alfa 6.500
+alfa 6.750
+alfa 7.000
+alfa 7.250
+alfa 7.500
+alfa 7.750
+alfa 8.000
+alfa 8.250
+alfa 8.500
+alfa 8.750
+alfa 9.000
+alfa 9.250
+alfa 9.500
+alfa 9.750
+alfa 10.000
+pacc
+
+quit

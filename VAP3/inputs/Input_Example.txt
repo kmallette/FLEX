@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<VAP>
+	<settings>
+		<relax>{Run with Relaxed Wake, Increases Computation Time+++}</relax>
+		<steady>{Run with Steady, TRUE, or Unsteady, FALSE, Aerodynamics}</steady>
+		<maxtime>{Max Simulated Time, generally it will not run this long}</maxtime>
+		<delta_time>{REMOVE ME}</delta_time>
+		<start_forces>{When to start force calculations, simulated time (seconds). Generally set = 0}</start_forces>
+		<stiff_wing>{0 for flexible wing, 1 for rigid wing}</stiff_wing>
+		<fixed_lift>{0 turn off fixed lift calculations, 1 for fixed lift}</fixed_lift>
+		<gust_mode>{select gust type: 1 for sine, 2 for 1-cosine, 3 for shap edge, 4 for von-karman}</gust_mode>
+		<gliding>{TRUE to turn on gliding, FALSE for powered flight}</gliding>
+        <viscous>{TRUE to turn on viscous calculations, FALSE to turn off}</viscous>
+        <flightdynamics>{TRUE for flight dynamics on, FALSE for off}</flightdynamics>
+	</settings>
+
+	<conditions>
+		<density>{constant air density, kg/m3}</density>
+		<kin_viscosity>{constant kinematic viscosity, m2/s}</kin_viscosity>
+		<gust_amplitude>{vertical gust magnitude, m/s}</gust_amplitude>
+		<gust_length>{Time steps within gust, time step}</gust_length>
+		<gust_start>{Time step that gust begins, time step}</gust_start>
+	</conditions>
+
+	<vehicle>
+		<global_x>{vehicle position @ time zero}</global_x>
+		<global_y>{vehicle position @ time zero}</global_y>
+		<global_z>{vehicle position @ time zero}</global_z>
+
+		<vehicle_CG>
+			<x>{overall vehicle center of gravity, m}</x>
+			<y>{overall vehicle center of gravity, m}</y>
+			<z>{overall vehicle center of gravity, m}</z>
+		</vehicle_CG>
+
+		<speed>{Target cruise speed of aircraft, m/s}</speed>
+		<weight>{Aircraft mass, kg}</weight>
+		<interference_drag>{Expected non-aerodynamic drag additions, N}</interference_drag>
+
+		<alpha>{Starting angle of attack, degrees}</alpha>
+		<fpa>0</fpa>
+		<beta>{Starting yaw angle, degrees}</beta>
+		<roll>{Starting roll angle}</roll>
+		<track>0</track>
+		<radius>{leave as nan for non-rotor}</radius>
+
+		<ref_area>{Planform area of wing, m2}</ref_area>
+		<ref_span>{Wingspan, m/s}</ref_span>
+		<ref_cmac>{Average chord length, m}</ref_cmac>
+
+		<wing>
+			<symmetry>{TRUE for symmetric right vs. left wing}</symmetry>
+			<incidence>{Wing incidence to vehicle frame, degrees}</incidence>
+			<trimable>{Is this wing used to trim the aircraft? TRUE for yes}</trimable>
+			<flexible>{TRUE to complete structural calculations on this wing}</flexible>
+			<triangular_elements>FALSE</triangular_elements>
+			<mass>{Mass of wing included in full aircraft mass, kg}</mass>
+
+			<chordwise_elements>{constant number of chordwise elements}</chordwise_elements>
+
+			<vehicle_x>{Location of wing in vehicle frame}</vehicle_x>
+			<vehicle_y>{Location of wing in vehicle frame}</vehicle_y>
+			<vehicle_z>{Location of wing in vehicle frame}</vehicle_z>
+    
+			<CG>
+				<x>{Wing CG, m}</x>
+				<y>{Wing CG, m}</y>
+				<z>{Wing CG, m}</z>
+			</CG>
+
+			<panel>
+				<spanwise_elements>{Number of spanwise elements in this panel}</spanwise_elements>
+				<strip_airfoil>{Airfoil data used, .mat file using generator}</strip_airfoil>
+				<section>
+					<wing_x>{Panel start location}</wing_x>
+					<wing_y>{Panel start location}</wing_y>
+					<wing_z>{Panel start location}</wing_z>
+					<chord>{Panel's starting chord, m}</chord>
+					<twist>{Panel start twist, degrees}</twist>
+				</section>
+				<section>
+					<wing_x>{Panel end location}</wing_x>
+					<wing_y>{Panel end location}</wing_y>
+					<wing_z>{Panel end location}</wing_z>
+					<chord>{Panel's final chord, m}</chord>
+					<twist>{Panel end twist, degrees}</twist>
+				</section>
+			</panel>
+    	</wing>
+
+		<wing>
+			<type>{HSTAB for horizontal stabalizer}</type>
+			<symmetry>{TRUE for symmetry across x-axis}</symmetry>
+			<incidence>{Incidence angle, degrees}</incidence>
+			<trimable>{TRUE if this is used for trimming the aircraft}</trimable>
+			<triangular_elements>FALSE</triangular_elements>
+			<mass>{Mass of Wing Section, kg}</mass>
+
+			<chordwise_elements>{constant number of chordwise elements}</chordwise_elements>
+			<chordwise_spacing>{NORMAL}</chordwise_spacing>
+
+			<vehicle_x>{Location of wing in vehicle frame}</vehicle_x>
+			<vehicle_y>{Location of wing in vehicle frame}</vehicle_y>
+			<vehicle_z>{Location of wing in vehicle frame}</vehicle_z>
+
+			<CG>
+				<x>{Wing CG Location, m}</x>
+				<y>{Wing CG Location, m}</y>
+				<z>{Wing CG Location, m}</z>
+			</CG>	
+
+			<trimorigin>
+				<x>{Center of rotation for tim in vehicle frame, m}</x>
+				<y>{Center of rotation for tim in vehicle frame, m}</y>
+				<z>{Center of rotation for tim in vehicle frame, m}</z>
+			</trimorigin>
+
+			<panel>
+				<spanwise_elements>{Number of spanwise elements in this panel}</spanwise_elements>
+				<spanwise_spacing>{NORMAL}</spanwise_spacing>
+				<strip_airfoil>{Airfoil data used, .mat file using generator}</strip_airfoil>
+				<section>
+					<wing_x>{Panel Start Location in Wing Frame, m}</wing_x>
+					<wing_y>{Panel Start Location in Wing Frame, m}</wing_y>
+					<wing_z>{Panel Start Location in Wing Frame, m}</wing_z>
+					<chord>{Panel's Start chord, m}</chord>
+					<twist>{Panel Start twist, degrees}</twist>
+				</section>
+				<section>
+					<wing_x>{Panel End Location in Wing Frame, m}</wing_x>
+					<wing_y>{Panel End Location in Wing Frame, m}</wing_y>
+					<wing_z>{Panel End Location in Wing Frame, m}</wing_z>
+					<chord>{Panel's End chord, m}</chord>
+					<twist>{Panel End twist, degrees}</twist>
+				</section>
+			</panel>
+		</wing>
+
+		<structure>
+			<conditions>
+				<valSDELTIME>{Structural time step (will find new value if too large), seconds}</valSDELTIME>
+				<valNSELE>{Structural Elements}</valNSELE>
+				<valSTIFFSTEPS>{Timesteps spend with rigid aircraft to build up data for initial solution}</valSTIFFSTEPS>
+				<valSTAGGERSTEPS>66</valSTAGGERSTEPS>
+			</conditions>
+
+			<properties>
+				<stiffness>	
+					<A_vecEIx>{Second Derivative Spanwise Coef. Bending Stiffness}</A_vecEIx>
+					<B_vecEIx>{First Derivative Spanwise Coef. Bending Stiffness}</B_vecEIx>
+					<C_vecEIx>{Constant Spanwise Coef. Bending Stiffness, N m2}</C_vecEIx>
+
+					<A_vecGJt>{Second Derivative Spanwise Coef. Torsional Stiffness}</A_vecGJt>
+					<B_vecGJt>{First Derivative Spanwise Coef. Torsional Stiffness}</B_vecGJt
+					<C_vecGJt>{Constant Spanwise Coef. Torsional Stiffness, N m2}</C_vecGJt>
+				</stiffness
+
+				<geometry>
+					<A_vecEA>{Second Derivative Spanwise Coef. Elastic Axis}</A_vecEA>
+					<B_vecEA>{First Derivative Spanwise Coef. Elastic Axis}</B_vecEA>
+					<C_vecEA>{Constant Spanwise Coef. Elastic Axis, %chord}</C_vecEA>
+					
+					<A_vecCG>{Second Derivative Spanwise Coef. Center of Gravity}</A_vecCG>
+					<B_vecCG>{First Derivative Spanwise Coef. Center of Gravity}</B_vecCG>
+					<C_vecCG>{Constant Spanwise Coef. Center of Gravity, %chord}</C_vecCG>
+				</geometry>
+
+				<mass>
+					<A_vecJt>{Second Derivative Spanwise Coef. Torsional Moment of Inertia}</A_vecJt>
+					<B_vecJt>{First Derivative Spanwise Coef. Torsional Moment of Inertia}</B_vecJt>
+					<C_vecJt>{Constant Spanwise Coef. Torsional Moment of Inertia, m4}</C_vecJt>
+
+					<A_vecLM>{Second Derivative Spanwise Coef. Linear Mass}</A_vecLM>
+					<B_vecLM>{First Derivative Spanwise Coef. Linear Mass}</B_vecLM>
+					<C_vecLM>{Constant Spanwise Coef. Linear Mass, kg/m}</C_vecLM>
+				</mass>
+			</properties>
+		</structure>
+
+		<fuselage>
+			<mass>{Mass of Fuselage (Included in Vehicle Mass), kg}</mass>
+			<length>{Fuselage Length (Make tiny if point mass on CG), m}</length>
+			<valNFELE>{Structural Elements}</valNFELE>
+			<flat_plate_area>{Fuselage Flat Plate Area (Make near zero if zero profile drag), m2}</flat_plate_area>
+			<start_loc>
+				<x>{Fuselage Nose Location in Vehicle Frame, m}</x>
+				<y>{Fuselage Nose Location in Vehicle Frame, m}</y>
+				<z>{Fuselage Nose Location in Vehicle Frame, m}</z>
+			</start_loc>
+		</fuselage>
+
+		<payload>
+			<mass>{Payload Mass, kg}</mass>
+			<CG>
+				<x>{Payload Location in Vehicle Frame, m}</x>
+				<y>{Payload Location in Vehicle Frame, m}</y>
+				<z>{Payload Location in Vehicle Frame, m}</z>
+			</CG>
+		</payload>
+	</vehicle>				
+</VAP>
+
+
+
+

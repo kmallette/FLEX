@@ -1,1 +1,0 @@
-Find included a small database of airfoils as well as a generator function that can be used to create files to be called by the VAPs input files.

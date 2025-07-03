@@ -1,1 +1,0 @@
-GIF output files are saved here.
